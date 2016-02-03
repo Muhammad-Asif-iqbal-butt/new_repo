@@ -1,0 +1,50 @@
+﻿
+    @using MVC.Models
+    @model MVC.Models.Product
+ 
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <title>@ViewBag.ProInfo</title>
+            <link href="~/Content/bootstrap.css" rel="stylesheet">
+            <script src="~/Scripts/bootstrap.js"></script>
+        </head>
+        <body style="background-color:chocolate">
+            <h2>@ViewBag.ProInfo</h2>
+            <form class="form-group" action="~/Home/AddToCart?itemId=@Model.Id&type=&CustId=@HttpContext.Current.Session["Id"]" method="post">
+
+                <table>
+                    <tr>
+                        <td><img src="~/images/@ViewBag.str" alt="Image" style="height: 350px; width: 400px; margin-left: 300px;margin-top: 30px;">
+                        <td>
+                        <td>
+                            <div style="margin-left: 50px; margin-top: 80px;font-family: 'Bodoni MT'; font-size: 20px; font-style: italic;">
+                                <p> Name: @Model.Name</p>
+                                <p style="font-family: 'Bodoni MT'; font-size: 20px; font-style: italic;"> Color:  Green</p>
+                                <p style="font-family: 'Bodoni MT'; font-size: 20px; font-style: italic;"> Description: @Model.Description</p>
+                                <p style="font-family: 'Bodoni MT'; font-size: 20px; font-style: italic;"> Price: @Model.Price </p>
+                                <p style="font-family: 'Bodoni MT'; font-size: 20px; font-style: italic;">
+
+                                    <label>Size: Small </label>
+                                </p>
+                                @if (Session["Id"] != null)
+                                {
+                                    <div class="mybutton" style="margin-left: 80px;margin-top: 30px">
+                                        <input type="submit" value="Add To Cart" class="button" />
+                                    </div>
+                                }
+                            </div>
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </body>
+
+
+    </html>
+    */
+}
